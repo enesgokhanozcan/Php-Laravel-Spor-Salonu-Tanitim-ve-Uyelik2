@@ -32,7 +32,7 @@ Route::get('/', function () {
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){
 
-    Route::get('/', [\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome');
+    Route::get('/', [\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
 
 
     Route::get('category', [\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
