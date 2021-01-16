@@ -25,7 +25,8 @@
             <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Category List</h2>
+
+                        <a href="{{route('admin_category_add')}}" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -91,7 +92,7 @@
                                                         <td>{{$rs->title}}</td>
                                                         <td>{{$rs->status}}</td>
                                                         <td>Edit</td>
-                                                        <td>Delete</td>
+                                                        <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete !  Are you sure?')" >Delete</a></td>
 
                                                     </tr>
                                                     @endforeach
