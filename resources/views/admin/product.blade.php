@@ -77,6 +77,7 @@
                                                         <th>Title(s)</th>
                                                         <th>Price</th>
                                                         <th>Image</th>
+                                                        <th>Image Gallery</th>
                                                         <th>Status</th>
                                                     </tr>
                                                     </thead>
@@ -96,6 +97,7 @@
                                                             @endif
 
                                                         </td>
+                                                        <td><a href="{{route('admin_image_add',['product_id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 witdth=1100,height=700')"><img src="{{asset('assets/admin/images')}}/gallery.icon.png" height="25"></a></td>
                                                         <td>{{$rs->status}}</td>
                                                         <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}">Edit</a> </td>
                                                         <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete !  Are you sure?')" >Delete</a></td>
