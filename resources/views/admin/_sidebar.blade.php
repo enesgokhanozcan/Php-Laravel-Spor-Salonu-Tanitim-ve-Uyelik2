@@ -96,7 +96,6 @@
                         <img src="{{asset('assets')}}/admin/production/images/img.jpg" >
                         @auth
                             <a href="#" class="d-block">{{ Auth::user()->name }} </a>
-                            <a href="{{route('admin_logout')}}" >Logout</a>
                         @endauth
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
