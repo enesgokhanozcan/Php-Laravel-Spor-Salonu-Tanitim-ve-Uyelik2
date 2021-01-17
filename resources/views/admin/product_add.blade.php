@@ -51,7 +51,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <form role="form" action="{{route('admin_product_store')}}" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" method="post">
+                        <form role="form" action="{{route('admin_product_store')}}" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="parent">Parent</label>
@@ -84,6 +84,16 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input type="number" name="tax" value="18" required="required" class="form-control">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Image<span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input type="file" name="image"  required="required" class="form-control">
+                                    @if ($rs->image)
+                                        <img src="{{Storage::url($rs->image)}}" height="30" alt=" ">
+                                    @endif
                                 </div>
                             </div>
                             <div class="item form-group">

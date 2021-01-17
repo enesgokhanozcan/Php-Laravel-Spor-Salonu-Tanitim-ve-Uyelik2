@@ -87,6 +87,16 @@
                                 </div>
                             </div>
                             <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">İmage<span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input type="file" name="image" required="required" class="form-control">
+                                        @if ($data->image)
+                                        <img src="{{Storage::url($data->image)}}" height="60" alt="">
+                                        @endif
+                                </div>
+                            </div>
+                            <div class="item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Detail<span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
