@@ -13,6 +13,11 @@
                     <li><a href="{{route('admin_products')}}">Product List</a></li>
                 </ul>
             </li>
+            <li><a><i class="fa fa-edit"></i> Settings </a>
+                <ul class="nav child_menu">
+                    <li><a href="{{route('admin_setting')}}">Admin Settings</a></li>
+                </ul>
+            </li>
 
         </ul>
     </div>
