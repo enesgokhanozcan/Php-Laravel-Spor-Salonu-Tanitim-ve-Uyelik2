@@ -89,7 +89,7 @@
 
                                                     <tr>
                                                         <td>{{$rs->id}}</td>
-                                                        <td>{{$rs->category_id}}</td>
+                                                        <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
                                                         <td>{{$rs->title}}</td>
                                                         <td>{{$rs->price}}</td>
                                                         <td> @if ($rs->image)
