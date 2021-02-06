@@ -11,9 +11,9 @@
             <div class="row">
                 <div class="col-md-4 animate-box">
                     <h3 class="section-title">About Us</h3>
-                    <p>2010 yılından bugüne kadar hizmet veren Royal Sports yeni konsepti ile karşınızda! Uygun fiyatlarla ulaşılabilecek spor deneyimi sunan ROYAL SPORTS, keyfini çıkarmak isteyen herkes için. Sen de bu deneyimin bir parçası olmak istiyorsan, hemen randevu al!
+                    <p>2010 yılından bugüne kadar hizmet veren Genc ve Fit yeni konsepti ile karşınızda! Uygun fiyatlarla ulaşılabilecek spor deneyimi sunan Genc ve Fit, keyfini çıkarmak isteyen herkes için. Sen de bu deneyimin bir parçası olmak istiyorsan, hemen randevu al!
 
-                        Senelerin tecrübesinin üstüne, Royal Sports’un muzip ruhunu kattık, size spor yapmanız için rahat ve eğlenceli bir atmosfer yarattık. Size sadece tadını çıkarmak kaldı..</p>
+                        Senelerin tecrübesinin üstüne, Genc ve Fit’in muzip ruhunu kattık, size spor yapmanız için rahat ve eğlenceli bir atmosfer yarattık. Size sadece tadını çıkarmak kaldı..</p>
                 </div>
 
                 <div class="col-md-4 animate-box">
