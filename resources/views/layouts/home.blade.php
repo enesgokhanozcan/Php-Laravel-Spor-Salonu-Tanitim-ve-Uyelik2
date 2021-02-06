@@ -1,3 +1,10 @@
+@php
+
+    $setting=\App\Http\Controllers\HomeController::getsetting()
+
+@endphp
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -10,7 +17,7 @@
     <meta name="viewport" content=" @yield('viewport') ">
     <meta name="description" content=" @yield('description') " />
     <meta name="keywords" content=" @yield('keywords') " />
-    <meta name="author" content="Antropozen" />
+    <meta name="author" content="Enes Ozcan" />
 
 
     <meta property="og:title" content=""/>

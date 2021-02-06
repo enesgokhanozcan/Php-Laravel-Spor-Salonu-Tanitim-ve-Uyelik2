@@ -1,17 +1,24 @@
+
+@php
+
+    $setting=\App\Http\Controllers\HomeController::getsetting()
+
+@endphp
+
 <!-- Stored in resources/views/child.blade.php -->
 
 @extends('layouts.home')
 
 
-@section('title', 'Laravel Fitness')
+@section('title', $setting->title)
 
 
 @section('description')
-    Türkiyenin en iyi fitness sitesi....
+    {{$setting->description}}
 
 @endsection
 
-@section('keywords', 'fitness, yoga, cycling')
+@section('keywords',$setting->keywords)
 
 @section('content')
     <div id="fh5co-schedule-section" class="fh5co-lightgray-section">

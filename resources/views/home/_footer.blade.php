@@ -1,20 +1,29 @@
+@php
+
+    $setting=\App\Http\Controllers\HomeController::getsetting()
+
+@endphp
+
+
 <footer>
     <div id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 animate-box">
                     <h3 class="section-title">About Us</h3>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
+                    <p>2010 yılından bugüne kadar hizmet veren Royal Sports yeni konsepti ile karşınızda! Uygun fiyatlarla ulaşılabilecek spor deneyimi sunan ROYAL SPORTS, keyfini çıkarmak isteyen herkes için. Sen de bu deneyimin bir parçası olmak istiyorsan, hemen randevu al!
+
+                        Senelerin tecrübesinin üstüne, Royal Sports’un muzip ruhunu kattık, size spor yapmanız için rahat ve eğlenceli bir atmosfer yarattık. Size sadece tadını çıkarmak kaldı..</p>
                 </div>
 
                 <div class="col-md-4 animate-box">
                     <h3 class="section-title">Our Address</h3>
-                    <ul class="contact-info">
-                        <li><i class="icon-map-marker"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
-                        <li><i class="icon-phone"></i>+ 1235 2355 98</li>
-                        <li><i class="icon-envelope"></i><a href="#">info@yoursite.com</a></li>
-                        <li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li>
-                    </ul>
+                    <strong>Company:</strong>{{$setting->company}}
+                    <strong>Address:</strong>{{$setting->address}}
+                    <strong>Phone:</strong>{{$setting->phone}}
+                    <strong>Fax:</strong>{{$setting->fax}}
+                    <strong>Email:</strong>{{$setting->email}}
+
                 </div>
                 <div class="col-md-4 animate-box">
                     <h3 class="section-title">Drop us a line</h3>
@@ -40,13 +49,12 @@
             <div class="row copy-right">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <p class="fh5co-social-icons">
-                        <a href="#"><i class="icon-twitter2"></i></a>
-                        <a href="#"><i class="icon-facebook2"></i></a>
-                        <a href="#"><i class="icon-instagram"></i></a>
-                        <a href="#"><i class="icon-dribbble2"></i></a>
-                        <a href="#"><i class="icon-youtube"></i></a>
+                        @if ($setting->twitter!=null)<a href="{{$setting->twitter}}" target="_blank"><i class="icon-twitter2"></i></a>@endif
+                        @if ($setting->facebook!=null)<a href="{{$setting->facebook}}" target="_blank"><i class="icon-facebook2"></i></a>@endif
+                        @if ($setting->instagram!=null)<a href="{{$setting->instagram}}" target="_blank"><i class="icon-instagram"></i></a>@endif
+                        @if ($setting->youtube!=null)<a href="{{$setting->youtube}}" target="_blank"><i class="icon-youtube"></i></a>@endif
                     </p>
-                    <p>Copyright 2016 Free Html5 <a href="#">Fitness</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                    <p> <a href="#">Fitness</a>. All Rights Reserved. {{$setting->company}}</p>
                 </div>
             </div>
         </div>

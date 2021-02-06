@@ -22,6 +22,9 @@ Route::redirect('/Anasayfa', '/home');
 Route::get('/home', [HomeController::class, 'index'])-> name('home');
 
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
+Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::get('/', function () {
     return view('home.index');
@@ -84,7 +87,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 Route::get('/admin/login', [HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck', [HomeController::class,'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout', [HomeController::class,'logout'])->name('admin_logout');
+Route::get('/logout', [HomeController::class,'logout'])->name('logout');
 
 
 
