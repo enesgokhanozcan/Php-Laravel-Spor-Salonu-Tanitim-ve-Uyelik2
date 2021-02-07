@@ -34,9 +34,8 @@ $setting=\App\Http\Controllers\HomeController::getsetting()
                                     <a href="{{asset('assets')}}/schedule.html">Schedule</a>
                                 </li>
                                 <li><a href="{{asset('assets')}}">Trainers</a></li>
-                                <li><a href="{{route('references')}}">References</a></li>
                                 <li><a href="{{route('fag')}}">FAQ</a></li>
-                                <li><a href="{{route('aboutus')}}">About</a></li>
+                                <li><a href="{{route('aboutus')}}">About Us</a></li>
                                 <li><a href="{{route('contact')}}">Contact</a></li>
                                 <li class="header-account dropdown default-dropdown">
                                     @auth
