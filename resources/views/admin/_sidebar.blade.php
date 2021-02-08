@@ -18,6 +18,11 @@
                     <li><a href="{{route('admin_setting')}}">Admin Settings</a></li>
                 </ul>
             </li>
+            <li><a><i class="fa fa-edit"></i> Message </a>
+                <ul class="nav child_menu">
+                    <li><a href="{{route('admin_message')}}">Contact Message</a></li>
+                </ul>
+            </li>
 
         </ul>
     </div>
