@@ -3,7 +3,7 @@
 
     $setting=\App\Http\Controllers\HomeController::getsetting();
 
-    $slider=\App\Models\Product::select('id','title','image','price','slug')->limit(6)->get()
+    $slider=\App\Models\Product::select('id','title','image','price','slug')->limit(8)->get()
 
 @endphp
 
@@ -317,6 +317,8 @@
                         <h3>{{$rs->title}}</h3>
                         <h1>{{$rs->price}}</h1>
                         <p>{{$rs->description}}</p>
+                        <span><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="btn btn-default">Quick View</a></span>
+
                         <span><a href="{{route('addtocart',['id'=>$rs->id])}}" class="btn btn-default">Add to Cart</a></span>
                     </div>
                 </div>
