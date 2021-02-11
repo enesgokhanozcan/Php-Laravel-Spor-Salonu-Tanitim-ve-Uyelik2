@@ -1,7 +1,7 @@
 @php
 
-$setting=\App\Http\Controllers\HomeController::getsetting()
-
+$setting=\App\Http\Controllers\HomeController::getsetting();
+$parentCategories = \App\Http\Controllers\HomeController::categoryList();
 @endphp
 
 <div id="fh5co-wrapper">
@@ -21,13 +21,20 @@ $setting=\App\Http\Controllers\HomeController::getsetting()
                                 <li>
                                     <a href="classes.html" class="fh5co-sub-ddown">Categories</a>
                                     <ul class="fh5co-sub-menu">
-                                        <li><a href="#">Body Combat</a></li>
-                                        <li><a href="#">Yoga Programs</a></li>
-                                        <li><a href="#">Cycling Program</a></li>
-                                        <li><a href="#">Boxing Fitness</a></li>
-                                        <li><a href="#">Swimming Program</a></li>
-                                        <li><a href="#">Massage</a></li>
+                                        @foreach($parentCategories as $rs)
+                                            <li class="dropdown side-dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdawn" aria-expanded="true">{{$rs->title}}<i class="fa fa-angle-down"></i></a>
+                                                <div class="custom-menu">
+                                                    <div class="row">
 
+                                                        @if(count($rs->children))
+                                                            @include('home.categorytree',['children'=>$rs->children])
+                                                        @endif
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li>

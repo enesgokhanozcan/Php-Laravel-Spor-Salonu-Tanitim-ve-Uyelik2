@@ -6,7 +6,7 @@
                 @include('home.categorytree',['$children'=>$subcategory->$children])
             </ul>
         @else
-            <li><a href="#">{{$subcategory->title}}</a> </li>
+            <li><a href="{{'categoryproducts',['id'=>$subcategory->id,'slug'=>$subcategory->slug]}}">{{$subcategory->title}}</a> </li>
         @endif
     </ul>
 @endforeach

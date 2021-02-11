@@ -1,9 +1,12 @@
 
 @php
 
-    $setting=\App\Http\Controllers\HomeController::getsetting()
+    $setting=\App\Http\Controllers\HomeController::getsetting();
+
+    $slider=\App\Models\Product::select('id','title','image','price','slug')->limit(6)->get()
 
 @endphp
+
 
 <!-- Stored in resources/views/child.blade.php -->
 
@@ -19,7 +22,6 @@
 @endsection
 
 @section('keywords',$setting->keywords)
-
 @section('content')
     <div id="fh5co-schedule-section" class="fh5co-lightgray-section">
         <div class="container">
@@ -308,63 +310,17 @@
     </div>
     <div id="fh5co-programs-section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="heading-section text-center animate-box">
-                        <h2>Our Programs</h2>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center">
+            @foreach($slider as $rs)
                 <div class="col-md-4 col-sm-6">
                     <div class="program animate-box">
-                        <img src="{{asset('assets')}}/images/fit-dumbell.svg" alt="Cycling">
-                        <h3>Body Combat</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                        <span><a href="#" class="btn btn-default">Join Now</a></span>
+                        <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="Cycling">
+                        <h3>{{$rs->title}}</h3>
+                        <h1>{{$rs->price}}</h1>
+                        <p>{{$rs->description}}</p>
+                        <span><a href="{{route('addtocart',['id'=>$rs->id])}}" class="btn btn-default">Add to Cart</a></span>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="program animate-box">
-                        <img src="{{asset('assets')}}/images/fit-yoga.svg" alt="">
-                        <h3>Yoga Programs</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                        <span><a href="#" class="btn btn-default">Join Now</a></span>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="program animate-box">
-                        <img src="{{asset('assets')}}/images/fit-cycling.svg" alt="">
-                        <h3>Cycling Program</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                        <span><a href="#" class="btn btn-default">Join Now</a></span>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="program animate-box">
-                        <img src="{{asset('assets')}}/images/fit-boxing.svg" alt="Cycling">
-                        <h3>Boxing Fitness</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                        <span><a href="#" class="btn btn-default">Join Now</a></span>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="program animate-box">
-                        <img src="{{asset('assets')}}/images/fit-swimming.svg" alt="">
-                        <h3>Swimming Program</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                        <span><a href="#" class="btn btn-default">Join Now</a></span>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="program animate-box">
-                        <img src="{{asset('assets')}}/images/fit-massage.svg" alt="">
-                        <h3>Massage</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                        <span><a href="#" class="btn btn-default">Join Now</a></span>
-                    </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </div>

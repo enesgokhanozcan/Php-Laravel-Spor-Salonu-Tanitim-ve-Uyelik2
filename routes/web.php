@@ -28,6 +28,11 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/product/{id}/{slug}', [HomeController::class, 'product'])->name('product');
+
+Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
+
+
 
 Route::get('/', function () {
     return view('home.index');
