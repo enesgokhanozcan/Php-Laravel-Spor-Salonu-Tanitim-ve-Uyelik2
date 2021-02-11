@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\MesssageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopcartController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +32,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/product/{id}/{slug}', [HomeController::class, 'product'])->name('product');
 
-Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
+
 
 
 
@@ -67,6 +69,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
     });
 
+
     #Message
     Route::prefix('message')->group(function (){
         Route::get('/', [MesssageController::class,'index'])->name('admin_message');
@@ -94,6 +97,37 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 
 });
+
+//User
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
+    Route::get('/profile',[UserController::class,'index'])->name('userprofile');
+
+    Route::prefix('product')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('user_products');
+        Route::get('create', [ProductController::class, 'create'])->name('user_product_add');
+        Route::post('store', [ProductController::class, 'store'])->name('user_product_store');
+        Route::get('edit/{id}', [ProductController::class, 'edit'])->name('user_product_edit');
+        Route::post('update/{id}', [ProductController::class, 'update'])->name('user_product_update');
+        Route::get('delete/{id}', [ProductController::class, 'destroy'])->name('user_product_delete');
+        Route::get('show', [ProductController::class, 'show'])->name('user_product_show');
+    });
+
+#ShopCart
+Route::prefix('shopcart')->group(function (){
+    Route::get('/', [ShopcartController::class,'index'])->name('user_shopcart');
+    Route::post('store/{id}', [ShopcartController::class,'store'])->name('user_shopcart_add');
+    Route::post('update/{id}', [ShopcartController::class,'update'])->name('user_shopcart_update');
+    Route::get('delete/{id}', [ShopcartController::class,'destroy'])->name('user_shopcart_delete');
+    });
+});
+
+
+
+
+
+
+
+
 
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){

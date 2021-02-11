@@ -318,8 +318,14 @@
                         <h1>{{$rs->price}}</h1>
                         <p>{{$rs->description}}</p>
                         <span><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="btn btn-default">Quick View</a></span>
-
-                        <span><a href="{{route('addtocart',['id'=>$rs->id])}}" class="btn btn-default">Add to Cart</a></span>
+                        <form action="{{route('user_shopcart_add',['id'=>$rs->id])}}" method="post">
+                            @csrf
+                        <div class="qty-input">
+                            <span class="btn btn-default">Month</span>
+                            <input class="input" name="quantity" type="" value="1" max="{{$rs->quantity}}">
+                        </div>
+                        <input type="submit" class="btn btn-default" value="Add to Cart"> </input>
+                        </form>
                     </div>
                 </div>
             @endforeach

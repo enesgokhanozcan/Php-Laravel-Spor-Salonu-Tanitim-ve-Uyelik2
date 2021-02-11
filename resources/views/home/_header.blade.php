@@ -44,6 +44,7 @@ $parentCategories = \App\Http\Controllers\HomeController::categoryList();
                                 <li><a href="{{route('fag')}}">FAQ</a></li>
                                 <li><a href="{{route('aboutus')}}">About Us</a></li>
                                 <li><a href="{{route('contact')}}">Contact</a></li>
+                                <li><a href="{{route('user_shopcart')}}">My Cart</a></li>
                                 <li class="header-account dropdown default-dropdown">
                                     @auth
                                         <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
@@ -79,7 +80,7 @@ $parentCategories = \App\Http\Controllers\HomeController::categoryList();
                         <div class="row">
                             <div class="col-md-7">
                                 <h2>Fitness &amp; Health <br>is a <b>Mentality</b></h2>
-                                <p><span>Created with <i class="icon-heart3"></i></span></p>
+                                <p><span>Created with <i class="icon-heart3"></i></span></p> @include('home.message')
                                 <span><a class="btn btn-primary" href="#">Start Your Journey</a></span>
                             </div>
                         </div>
