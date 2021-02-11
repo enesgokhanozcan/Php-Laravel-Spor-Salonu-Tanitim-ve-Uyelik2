@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $setting=Setting::first();
-        $slider=Product::select('id','title','image','price','slug')->limit(6)->get();
+        $slider=Product::select('id','title','image','price','slug')->limit(8)->get();
         $data=[
           'setting'=>$setting,
           'slider'=>$slider,

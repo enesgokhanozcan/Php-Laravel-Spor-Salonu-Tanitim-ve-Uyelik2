@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\MesssageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopcartController;
 use App\Http\Controllers\UserController;
@@ -110,6 +111,17 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
         Route::post('update/{id}', [ProductController::class, 'update'])->name('user_product_update');
         Route::get('delete/{id}', [ProductController::class, 'destroy'])->name('user_product_delete');
         Route::get('show', [ProductController::class, 'show'])->name('user_product_show');
+    });
+
+    #order
+    Route::prefix('order')->group(function () {
+        Route::get('/', [OrderController::class, 'index'])->name('user_order');
+        Route::post('create', [OrderController::class, 'create'])->name('user_order_add');
+        Route::post('store', [OrderController::class, 'store'])->name('user_order_store');
+        Route::get('edit/{id}', [OrderController::class, 'edit'])->name('user_order_edit');
+        Route::post('update/{id}', [OrderController::class, 'update'])->name('user_order_update');
+        Route::get('delete/{id}', [OrderController::class, 'destroy'])->name('user_order_delete');
+        Route::get('show/{id}', [OrderController::class, 'show'])->name('user_order_show');
     });
 
 #ShopCart

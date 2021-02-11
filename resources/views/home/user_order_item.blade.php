@@ -1,7 +1,7 @@
     @extends('layouts.home')
 
 
-    @section('title', 'My Shopcart')
+    @section('title', 'Order Items')
 
 
     @section('content')
@@ -12,7 +12,7 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="{{route('home')}}">Home</a> </li>
-                <li class="active">Shopcart</li>
+                <li class="active">Order Items</li>
             </ul>
         </div>
     </div>
@@ -50,9 +50,9 @@
                             <td>{{$rs->quantity}}</td>
                             <td>{{$rs->price}}</td>
                             <td>{{$rs->status}}</td>
-                            <td><a href="{{route('user_shopcart_update',['id'=>$rs->id])}}">Edit</a> </td>
                             <td><a href="{{route('user_shopcart_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete !  Are you sure?')" >Delete</a></td>
 
+                            <td>{{$rs->total}}</td>
                         </tr>
                         @php
                             $total+=$rs->price*$rs->quantity;
