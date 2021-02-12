@@ -9,11 +9,11 @@ class Shopcart extends Model
 {
     use HasFactory;
 
-    public function category(){
+    public function product(){
         return $this->belongsTo(Category::class);
     }
 
-    public function shopcart(){
+    public function user(){
         return $this->hasMany(Shopcart::class);
     }
 

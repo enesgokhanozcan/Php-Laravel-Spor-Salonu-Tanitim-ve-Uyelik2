@@ -45,6 +45,7 @@
                             </div>
                         @endforeach
                         <h5 class="my-2 text-center text-uppercase">{{$data->title}}</h5>
+                        <h5 class="my-2 text-center text-uppercase">{{$data->price}}</h5>
                         <h5 class="heading mb-3 text-center" ><strong>Description:</strong> {{$data->description}}</h5>
                     </div>
 

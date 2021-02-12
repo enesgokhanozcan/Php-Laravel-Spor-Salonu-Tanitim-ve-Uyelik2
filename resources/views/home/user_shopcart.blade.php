@@ -27,7 +27,6 @@
                     <thead>
                     <tr>
                         <th>Product</th>
-                        <th>Price</th>
                         <th>Month</th>
                         <th>Total</th>
                         <th>Actions</th>
@@ -41,15 +40,23 @@
 
 
                         <tr>
-                            <td> @if ($rs->image)
-                                    <img src="{{Storage::url($rs->image)}}" height="30" alt=" ">
+                            <td><a href="{{route('product',['id'=>$rs->product->id,'slug'=>$rs->product->slug])}}"></a>
+                            {{$rs->product->title}}
+                            <td>{{$rs->quantity}}</td>
+                            <td class="thumb">
+                                @if ($rs->product->image)
+                                    <img src="{{\Illuminate\Support\Facades\Storage::url($rs->product->image)}}" height="30" alt=" ">
                                 @endif
 
                             </td>
-                            <td>{{$rs->title}}</td>
+                            <td><a href="{{route('product',['id'=>$rs->product->id,'slug'=>$rs->product->slug])}}"></a>
+                                {{$rs->product->title}}
+                            </td>
                             <td>{{$rs->quantity}}</td>
-                            <td>{{$rs->price}}</td>
-                            <td>{{$rs->status}}</td>
+                            <td>{{$rs->product->price}}</td>
+
+
+                            <td>{{$rs->product->price*$rs->quantity}}</td>
                             <td><a href="{{route('user_shopcart_update',['id'=>$rs->id])}}">Edit</a> </td>
                             <td><a href="{{route('user_shopcart_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete !  Are you sure?')" >Delete</a></td>
 

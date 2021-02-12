@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('address',200);
             $table->string('phone',20);
             $table->float('total');
-            $table->string('note',150);
+            $table->string('note',150)->nullable();
             $table->string('IP',20);
             $table->string('status',30)->default('New');
             $table->timestamps();

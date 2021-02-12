@@ -63,6 +63,7 @@ class OrderController extends Controller
         $data2->price = $rs->product->price;
         $data2->quantity = $rs->quantity;
         $data2->amount = $rs->quantity*$data2->price = $rs->product->price;
+        $data2->note="New";
         $data2->save();
 
         }

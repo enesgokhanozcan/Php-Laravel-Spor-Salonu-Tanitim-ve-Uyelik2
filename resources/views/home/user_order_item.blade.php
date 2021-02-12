@@ -41,28 +41,25 @@
 
 
                         <tr>
-                            <td> @if ($rs->image)
-                                    <img src="{{Storage::url($rs->image)}}" height="30" alt=" ">
+                            <td> @if ($rs->product->image)
+                                    <img src="{{Storage::url($rs->product->image)}}" height="30" alt=" ">
                                 @endif
 
                             </td>
-                            <td>{{$rs->title}}</td>
-                            <td>{{$rs->quantity}}</td>
-                            <td>{{$rs->price}}</td>
-                            <td>{{$rs->status}}</td>
-                            <td><a href="{{route('user_shopcart_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete !  Are you sure?')" >Delete</a></td>
+                            <td>{{$rs->product->title}}</td>
+                            <td>{{$rs->product->quantity}}</td>
+                            <td>{{$rs->product->price}}</td>
+                            <td>{{$rs->product->status}}</td>
 
-                            <td>{{$rs->total}}</td>
+                            <td>{{$rs->product->total}}</td>
+                            <td>{{$rs->note}}</td>
                         </tr>
-                        @php
-                            $total+=$rs->price*$rs->quantity;
-                        @endphp
                     @endforeach
                     </tbody>
                 </table>
                 <form action="{{route('user_order_add')}}" method="post">
                     @csrf
-                    <input type="hidden"  name="total" value="{{$total}}">
+                    <input type="hidden"  name="total" value="{{$rs->order->total}}">
                     <div class="pull-right">
                         <button type="submit" class="primary-btn">Place Order</button>
                     </div>

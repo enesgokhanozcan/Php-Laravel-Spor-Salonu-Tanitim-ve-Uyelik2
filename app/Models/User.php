@@ -68,6 +68,9 @@ class User extends Authenticatable
     public function orderitem(){
         return $this->hasMany(Orderitem::class);
     }
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
 
 
 }

@@ -37,11 +37,13 @@ class ShopcartController extends Controller
      */
     public function store(Request $request,$id)
     {
-
-        $data = new Shopcart();
+        $data=Shopcart::where('product_id',$id)->where('user_id',Auth::id())->first();
+        $data=new Shopcart;
         $data->product_id=$id;
         $data->user_id=Auth::id();
         $data->quantity=$request->input('quantity');
+
+
         $data->save();
         return redirect()->back()->with('success','Product Added Shopcart');
     }

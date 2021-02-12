@@ -66,10 +66,9 @@
                             <div class="form-group">
                                 <input class="input" type="text" name="key" value="{" placeholder="Secret Key">
                             </div>
-
-
-
-
+                            <div class="pull-right">
+                                    <button type="submit" class="primary-btn">Place Order</button>
+                            </div>
                         </div>
                     </div>
                 </form>

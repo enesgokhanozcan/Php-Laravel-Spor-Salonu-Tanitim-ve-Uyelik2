@@ -41,23 +41,23 @@
                         @csrf
                         <div class="form-group">
                             <label for="name" class="sr-only">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label for="phone" class="sr-only">Phone</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Phone">
+                            <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone">
                         </div>
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="Email">
+                            <input type="text" name="email" class="form-control" id="email" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="subject" class="sr-only">Subject</label>
-                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            <input type="text" name="Subject" class="form-control" id="subject" placeholder="Subject">
                         </div>
                         <div class="form-group">
                             <label for="message" class="sr-only">Message</label>
-                            <textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
+                            <textarea class="form-control" name="message" id="message" rows="7" placeholder="Message"></textarea>
                         </div>
 
                         <div class="form-group">
