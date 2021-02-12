@@ -17,8 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $datalist=Product::all();
-        return view('product',['datalist'=>$datalist]);
+        $datalist=Product::where('user_id',Auth::id())->get();
+        return view('home.user_product',['datalist'=> $datalist]);
     }
 
     /**
@@ -30,7 +30,7 @@ class ProductController extends Controller
     {
 
         $datalist = Category::with('children')->get();
-        return view('product_add',['datalist' => $datalist]);
+        return view('home.user_product_add', ['datalist' => $datalist]);
 
     }
 
@@ -57,7 +57,7 @@ class ProductController extends Controller
             $data->image=Storage::putFile('images',$request->file('image'));
         }
         $data->save();
-        return redirect()->route('user_products');
+        return redirect()->route('user_product');
     }
 
     /**
@@ -81,7 +81,7 @@ class ProductController extends Controller
     {
         $data=Product::find($id);
         $datalist = Category::with('children')->get();
-        return view('product_edit',['data'=>$data],['datalist' => $datalist]);
+        return view('home.user_product_edit',['data'=>$data],['datalist' => $datalist]);
     }
 
     /**
@@ -108,7 +108,7 @@ class ProductController extends Controller
             $data->image=Storage::putFile('images',$request->file('image'));
         }
         $data->save();
-        return redirect()->route('user_products');
+        return redirect()->route('user_product');
     }
 
     /**
@@ -125,7 +125,7 @@ class ProductController extends Controller
         $data->delete();
 
 
-        return redirect()->route('user_products');
+        return redirect()->route('user_product');
     }
 
 }
